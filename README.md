@@ -21,6 +21,23 @@ wearables-ml-examples/
 
 ## Software
 
+These examples were developed with **conda 25.11.0**.
+
+Create and activate the environment:
+
+```
+conda env create -f environment.yml
+conda activate wearables-ml
+jupyter lab
+```
+
+The `environment.yml` file lists the main dependencies used in the notebooks.  
+
+For the exact snapshot of the environment used: `requirements.txt`.
+
+```    
+pip install -r requirements.txt
+```
 
 ---
 
