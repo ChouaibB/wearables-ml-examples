@@ -58,8 +58,7 @@ pip install -r requirements.txt
 
 ## Notebooks overview
 
-- **01 – Activity Recognition from Wearable IMU (PAMAP2)**  
-  [Notebook](notebooks/01_activity_recognition_pamap2.ipynb) | [PDF](notebooks/pdf/01_activity_recognition_pamap2.pdf)
+- **01 – Activity Recognition from Wearable IMU (PAMAP2)** [Notebook](notebooks/01_activity_recognition_pamap2.ipynb) | [PDF](notebooks/pdf/01_activity_recognition_pamap2.pdf)
 
   Uses the public **PAMAP2 Physical Activity Monitoring dataset** (UCI) to demonstrate a clean, wearable-style human activity recognition (HAR) workflow:
   1) load and sanity-check synchronized multi-IMU data, then subset to a watch-like wrist setup,  
