@@ -11,10 +11,16 @@ recognition and physiology/stress inference.
 
 ```
 wearables-ml-examples/
-├─ notebooks/            # Jupyter notebooks (main deliverables)
-├─ src/                  # Lightweight utilities shared across notebooks
-├─ data/                 # Local datasets (NOT committed)
-└─ README.md
+├── LICENSE 
+├── README.md
+├── environment.yml 
+├── requirements.txt
+├── notebooks/          # main analysis & modelling notebooks                                                                   
+│   ├── 01_activity_recognition_from_wrist_imu_pamap2.ipynb                     
+│   └── pdf/            # Notebooks PDF renders 
+├── data/               # Local datasets (NOT committed)
+│   └── pamap2/
+└── src/                # optional Python helpers
 ```
 
 ---
@@ -51,6 +57,19 @@ pip install -r requirements.txt
 ---
 
 ## Notebooks overview
+
+- **01 – Activity Recognition from Wearable IMU (PAMAP2)**  
+  [Notebook](notebooks/01_activity_recognition_pamap2.ipynb) | [PDF](notebooks/pdf/01_activity_recognition_pamap2.pdf)
+
+  Uses the public **PAMAP2 Physical Activity Monitoring dataset** (UCI) to demonstrate a clean, wearable-style human activity recognition (HAR) workflow:
+  1) load and sanity-check synchronized multi-IMU data, then subset to a watch-like wrist setup,  
+  2) preprocess signals using standard vector-magnitude representations and fixed-length sliding windows,  
+  3) extract simple time-domain features commonly used in wearable HAR,  
+  4) train and evaluate baseline and strong classical models (Logistic Regression, HistGradientBoosting) using **subject-wise cross-validation**, and  
+  5) analyze results via confusion matrices, per-subject performance variability, and PCA-based interpretability (decision regions and component loadings).
+
+  The notebook emphasizes **sound evaluation practice, interpretability, and realistic wearable constraints**, rather than performance maximization.
+
 
 ---
 
