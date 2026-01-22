@@ -17,3 +17,4 @@ dependencies:
   - joblib
   - h5py
   - pytorch
+  - sktime

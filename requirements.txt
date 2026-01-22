@@ -72,7 +72,7 @@ nbformat==5.10.4
 nest_asyncio==1.6.0
 networkx==3.6.1
 notebook_shim==0.2.4
-numpy==2.4.1
+numpy==2.3.5
 optree==0.18.0
 overrides==7.7.0
 packaging==25.0
@@ -106,12 +106,14 @@ rfc3339_validator==0.1.4
 rfc3986-validator==0.1.1
 rfc3987-syntax==1.1.0
 rpds-py==0.30.0
-scikit-learn==1.8.0
+scikit-base==0.13.0
+scikit-learn==1.7.2
 scipy==1.17.0
 Send2Trash==2.1.0
 setuptools==80.9.0
 shiboken6==6.10.1
 six==1.17.0
+sktime==0.40.1
 sniffio==1.3.1
 soupsieve==2.8.1
 stack_data==0.6.3
