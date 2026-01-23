@@ -15,12 +15,14 @@ wearables-ml-examples/
 ├── README.md
 ├── environment.yml 
 ├── requirements.txt
-├── notebooks/          # main analysis & modelling notebooks                                                                   
-│   ├── 01_activity_recognition_from_wrist_imu_pamap2.ipynb                     
-│   └── pdf/            # Notebooks PDF renders 
-├── data/               # Local datasets (NOT committed)
-│   └── pamap2/
-└── src/                # optional Python helpers
+├── notebooks/                                                  # main analysis & modelling notebooks
+│   ├── 01_activity_recognition_from_wrist_imu_pamap2.ipynb
+│   ├── 02_hr_estimation_from_wrist_ppg_acc_ppgdalia.ipynb                     
+│   └── pdf/                                                    # Notebooks PDF renders 
+├── data/                                                       # Local datasets (NOT committed)
+│   ├── pamap2/
+│   └── PPGDalia/
+└── src/                                                        # optional Python helpers
 ```
 
 ---
@@ -69,6 +71,16 @@ pip install -r requirements.txt
 
   The notebook emphasizes **sound evaluation practice, interpretability, and realistic wearable constraints**, rather than performance maximization.
 
+- **02 – Heart Rate Estimation from Wrist PPG + Accelerometer (PPG-DaLiA)** [Notebook](notebooks/02_hr_estimation_from_wrist_ppg_acc_ppgdalia.ipynb) | [PDF](notebooks/pdf/02_hr_estimation_from_wrist_ppg_acc_ppgdalia.pdf)
+
+  Uses the **PPG-DaLiA dataset** (Zenodo benchmark format) to demonstrate a compact, wearable-focused regression workflow for **heart rate estimation under motion**:
+  1) load and inspect pre-segmented wrist **PPG + accelerometer** windows with ECG-derived HR ground truth,  
+  2) design a small set of **interpretable, reliability-aware features** capturing motion intensity and PPG periodicity,  
+  3) train and compare classical regression models (Ridge, SVR, HistGradientBoosting) on a fixed train/test split,  
+  4) evaluate performance using **MAE, RMSE, and tolerance-based accuracy** (within ±5/±10 bpm), and  
+  5) analyze errors through **motion-aware diagnostics**, including error vs motion intensity, error distributions, and parity plots.
+
+  The notebook emphasizes **model-level motion artefact compensation, robust evaluation, and interpretability**, providing a strong classical baseline before more complex end-to-end deep wearable models.
 
 ---
 
