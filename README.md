@@ -17,11 +17,13 @@ wearables-ml-examples/
 ├── requirements.txt
 ├── notebooks/                                                  # main analysis & modelling notebooks
 │   ├── 01_activity_recognition_from_wrist_imu_pamap2.ipynb
-│   ├── 02_hr_estimation_from_wrist_ppg_acc_ppgdalia.ipynb                     
+│   ├── 02_hr_estimation_from_wrist_ppg_acc_ppgdalia.ipynb
+│   ├── 03_sleep_stage_classification_from_wrist_acc_hr_sleep_accel.ipynb                     
 │   └── pdf/                                                    # Notebooks PDF renders 
 ├── data/                                                       # Local datasets (NOT committed)
 │   ├── pamap2/
-│   └── PPGDalia/
+│   ├── PPGDalia/
+│   └── sleep_accel/
 └── src/                                                        # optional Python helpers
 ```
 
@@ -81,6 +83,17 @@ pip install -r requirements.txt
   5) analyze errors through **motion-aware diagnostics**, including error vs motion intensity, error distributions, and parity plots.
 
   The notebook emphasizes **model-level motion artefact compensation, robust evaluation, and interpretability**, providing a strong classical baseline before more complex end-to-end deep wearable models.
+
+- **03 – Sleep Stage Classification from Wrist ACC + Heart Rate (PhysioNet Sleep-Accel / Apple Watch)** [Notebook](notebooks/03_sleep_stage_classification_from_wrist_acc_hr_sleep_accel.ipynb) | [PDF](notebooks/pdf/03_sleep_stage_classification_from_wrist_acc_hr_sleep_accel.pdf)
+                                                                                
+  Uses the **PhysioNet Sleep-Accel (Apple Watch)** dataset (wrist **3-axis accelerometer + PPG-derived heart rate**) aligned to **PSG sleep staging** to demonstrate a leakage-aware, end-to-end sleep classification workflow:
+  1) load multi-rate wearable streams (ACC, HR) and PSG labels with clear file/column conventions and licensing notes,
+  2) align raw sensor samples to **30-second PSG epochs** and keep per-epoch raw sequences without interpolation,
+  3) extract a compact, **interpretable** feature set (ACC magnitude summaries + HR summaries + simple reliability counts) and add **past-only rolling history** features,
+  4) train classical models with **subject-wise 5-fold GroupKFold** to avoid leakage, comparing **Logistic Regression (L2, balanced)** vs **HistGradientBoosting**,
+  5) report results for both **5-class staging** (Wake/N1/N2/N3/REM) and a more wearable-realistic **3-class** setup (Wake/NREM/REM) using fold stability, per-subject variability, and normalized confusion matrices.
+                                                                                
+  The notebook emphasizes **PSG-aligned epoching, reproducible subject-wise evaluation, and lightweight temporal context features**, illustrating why coarse sleep staging is typically more robust than fine-grained staging from wrist signals alone.
 
 ---
 
