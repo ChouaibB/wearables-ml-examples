@@ -1,20 +1,16 @@
 name: wearables-ml
 channels:
-  - conda-forge
-  - pytorch
-  - defaults
+  - https://repo.anaconda.com/pkgs/main
+  - https://repo.anaconda.com/pkgs/r
 dependencies:
   - python=3.11
-  - pip
-  - jupyterlab
-  - ipykernel
   - numpy
   - pandas
   - scipy
   - scikit-learn
   - matplotlib
-  - tqdm
-  - joblib
-  - h5py
-  - pytorch
-  - sktime
+  - jupyter
+  - pip
+  - pip:
+      - tqdm
+      - sktime
